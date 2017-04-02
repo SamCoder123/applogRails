@@ -1,0 +1,121 @@
+Exception reason：NSInvalidArgumentException
+Exception name：*** -[__NSPlaceholderDictionary initWithObjects:forKeys:count:]: attempt to insert nil object from objects[0]
+Exception stack：[
+0   CoreFoundation                      0x018babf2 __exceptionPreprocess + 194,
+1   libobjc.A.dylib                     0x00f54e66 objc_exception_throw + 52,
+2   CoreFoundation                      0x017c9168 -[__NSPlaceholderDictionary initWithObjects:forKeys:count:] + 424,
+3   CoreFoundation                      0x017c8f7b +[NSDictionary dictionaryWithObjects:forKeys:count:] + 75,
+4   Edison                              0x00078cbd -[BaseNavigationController back] + 109,
+5   libobjc.A.dylib                     0x00f6a200 -[NSObject performSelector:withObject:withObject:] + 63,
+6   UIKit                               0x031c5016 -[UIApplication sendAction:to:from:forEvent:] + 91,
+7   UIKit                               0x031c4fb0 -[UIApplication sendAction:toTarget:fromSender:forEvent:] + 41,
+8   UIKit                               0x03374865 -[UIControl sendAction:to:forEvent:] + 64,
+9   Edison                              0x0012009e -[UIButton(touch) mySendAction:to:forEvent:] + 718,
+10  UIKit                               0x03374bcd -[UIControl _sendActionsForEvents:withEvent:] + 462,
+11  UIKit                               0x03373a52 -[UIControl touchesEnded:withEvent:] + 717,
+12  UIKit                               0x0323be20 -[UIWindow _sendTouchesForEvent:] + 3063,
+13  UIKit                               0x0323d65b -[UIWindow sendEvent:] + 4312,
+14  UIKit                               0x031e3ad4 -[UIApplication sendEvent:] + 395,
+15  UIKit                               0x03a87a8c __dispatchPreprocessedEventFromEventQueue + 3706,
+16  UIKit                               0x03a7fb8a __handleEventQueue + 5345,
+17  CoreFoundation                      0x01859edf __CFRUNLOOP_IS_CALLING_OUT_TO_A_SOURCE0_PERFORM_FUNCTION__ + 15,
+18  CoreFoundation                      0x0183dfa7 __CFRunLoopDoSources0 + 519,
+19  CoreFoundation                      0x0183d434 __CFRunLoopRun + 1124,
+20  CoreFoundation                      0x0183cd5b CFRunLoopRunSpecific + 395,
+21  CoreFoundation                      0x0183cbbb CFRunLoopRunInMode + 123,
+22  GraphicsServices                    0x07475b4c GSEventRunModal + 177,
+23  GraphicsServices                    0x074759c7 GSEventRun + 80,
+24  UIKit                               0x031c2ff3 UIApplicationMain + 148,
+25  Edison                              0x0007958c main + 140,
+26  libdyld.dylib                       0x04a7d799 start + 1
+]-----------崩溃追踪---------Call Backtrace of 11 threads:
+Backtrace of Thread 2567:
+libsystem_kernel.dylib          0x04d8949a mach_msg_trap + 10
+libsystem_kernel.dylib          0x04d84872 thread_get_state + 459
+Edison                          0x00113ea3 bs_mach_copyMem + 83
+Edison                          0x00113456 _bs_backtraceOfThread + 790
+Edison                          0x00113d02 +[BSBacktraceLogger bs_backtraceOfAllThread] + 210
+Edison                          0x00046d74 +[UncaughtExceptionHandler saveCreash:] + 724
+Edison                          0x00047383 HandleException + 307
+CoreFoundation                  0x0192d2d9 __handleUncaughtException + 809
+libobjc.A.dylib                 0x00f55103 _ZL15_objc_terminatev + 100
+libc++abi.dylib                 0x049456c1 _ZSt11__terminatePFvvE + 14
+libc++abi.dylib                 0x049452f4 __cxa_rethrow + 103
+libobjc.A.dylib                 0x00f55009 objc_exception_rethrow + 47
+CoreFoundation                  0x0183cde3 CFRunLoopRunSpecific + 531
+CoreFoundation                  0x0183cbbb CFRunLoopRunInMode + 123
+GraphicsServices                0x07475b4c GSEventRunModal + 177
+GraphicsServices                0x074759c7 GSEventRun + 80
+UIKit                           0x031c2ff3 UIApplicationMain + 148
+Edison                          0x0007958c main + 140
+libdyld.dylib                   0x04a7d799 start + 1
+
+Backtrace of Thread 3843:
+libsystem_kernel.dylib          0x04d917fa kevent_qos + 10
+libdispatch.dylib               0x04a2cea4 _dispatch_mgr_invoke + 240
+libdispatch.dylib               0x04a2ccc7 _dispatch_mgr_thread + 59
+
+Backtrace of Thread 5123:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 11011:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 13059:
+libsystem_kernel.dylib          0x04d8949a mach_msg_trap + 10
+CoreFoundation                  0x0183e1d6 __CFRunLoopServiceMachPort + 214
+CoreFoundation                  0x0183d608 __CFRunLoopRun + 1592
+CoreFoundation                  0x0183cd5b CFRunLoopRunSpecific + 395
+CoreFoundation                  0x0183cbbb CFRunLoopRunInMode + 123
+Foundation                      0x00a9c182 -[NSRunLoop(NSRunLoop) runMode:beforeDate:] + 308
+Foundation                      0x00b27457 -[NSRunLoop(NSRunLoop) runUntilDate:] + 71
+UIKit                           0x03d30a3c -[UIEventFetcher threadMain] + 144
+Foundation                      0x00aacbab -[NSThread main] + 68
+Foundation                      0x00aac930 __NSThread__start__ + 1332
+libsystem_pthread.dylib         0x04dbd780 _pthread_body + 138
+libsystem_pthread.dylib         0x04dbd6f6 _pthread_start + 155
+libsystem_pthread.dylib         0x04dbaf7a thread_start + 34
+
+Backtrace of Thread 18439:
+libsystem_kernel.dylib          0x04d894ee semaphore_timedwait_trap + 10
+libdispatch.dylib               0x04a25b31 dispatch_semaphore_wait + 35
+Edison                          0x0005ed36 __39-[SeMonitorController registerObserver]_block_invoke + 102
+libdispatch.dylib               0x04a17396 _dispatch_call_block_and_release + 15
+libdispatch.dylib               0x04a42cc3 _dispatch_client_callout + 14
+libdispatch.dylib               0x04a2023d _dispatch_queue_override_invoke + 1069
+libdispatch.dylib               0x04a225e4 _dispatch_root_queue_drain + 470
+libdispatch.dylib               0x04a223a6 _dispatch_worker_thread3 + 143
+libsystem_pthread.dylib         0x04dbd25c _pthread_wqthread + 1050
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 27651:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 28943:
+libsystem_kernel.dylib          0x04d8949a mach_msg_trap + 10
+CoreFoundation                  0x0183e1d6 __CFRunLoopServiceMachPort + 214
+CoreFoundation                  0x0183d608 __CFRunLoopRun + 1592
+CoreFoundation                  0x0183cd5b CFRunLoopRunSpecific + 395
+CoreFoundation                  0x0183cbbb CFRunLoopRunInMode + 123
+CFNetwork                       0x053b9c58 +[NSURLConnection(Loader) _resourceLoadLoop:] + 351
+Foundation                      0x00aacbab -[NSThread main] + 68
+Foundation                      0x00aac930 __NSThread__start__ + 1332
+libsystem_pthread.dylib         0x04dbd780 _pthread_body + 138
+libsystem_pthread.dylib         0x04dbd6f6 _pthread_start + 155
+libsystem_pthread.dylib         0x04dbaf7a thread_start + 34
+
+Backtrace of Thread 33027:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 33539:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+
+Backtrace of Thread 27171:
+libsystem_kernel.dylib          0x04d90d5e __workq_kernreturn + 10
+libsystem_pthread.dylib         0x04dbaf56 start_wqthread + 34
+

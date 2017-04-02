@@ -1,0 +1,97 @@
+Started GET "/" for ::1 at 2017-04-02 17:18:37 +0800
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/railties-5.0.2/lib/rails/templates/rails/welcome/index.html.erb (4.6ms)
+Completed 200 OK in 21ms (Views: 10.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20170402092209)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "applog_file_name" varchar, "applog_content_type" varchar, "applog_file_size" integer, "applog_updated_at" datetime, "applog_path" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170402092209"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-04-02 09:22:46 UTC], ["updated_at", 2017-04-02 09:22:46 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:09:06 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/api/api.rb:20:in `block (2 levels) in <class:API>'
+  Rendering /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.5ms)
+  Rendering /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendering /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.8ms)
+  Rendered /Users/SamLee/.rvm/gems/ruby-2.3.4@global/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (82.4ms)
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:10:26 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/dc1d71bbb5c4d2a5e936db79ef10c19f20170402-2790-h87h31.txt'
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "applog_file_name", "applog_content_type", "applog_file_size", "applog_updated_at", "applog_path", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "111"], ["applog_file_name", "log.txt"], ["applog_content_type", "text/plain"], ["applog_file_size", 69], ["applog_updated_at", 2017-04-02 15:10:26 UTC], ["applog_path", "log.txt"], ["created_at", 2017-04-02 15:10:26 UTC], ["updated_at", 2017-04-02 15:10:26 UTC]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:11:20 +0800
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:11:20 +0800
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:11:20 +0800
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/00cb7ebbfc3a8ec2c64cef7c0b4b557b20170402-2790-3b7f24.txt'
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/a0ee92721d22ae2f6a78258eb008fb5220170402-2790-zha4p3.txt'
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/a54b13a5e11a945e0c1c279b4849aa9320170402-2790-1bga8oo.txt'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:12:26 +0800
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:12:26 +0800
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:12:26 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/aee6d336311a8f38b356d067b57d602b20170402-2790-m1phhp.txt'
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/4be3ddcb92c3f0d22edda6aa8dbd75c220170402-2790-1v0mctl.txt'
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/dc5f87d6152ddce34ab1a498fdc2f36c20170402-2790-13jaqa.txt'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:13:27 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/dc1d71bbb5c4d2a5e936db79ef10c19f20170402-2790-1m9l7ym.txt'
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "applog_file_name", "applog_content_type", "applog_file_size", "applog_updated_at", "applog_path", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xxxxxx"], ["applog_file_name", "log.txt"], ["applog_content_type", "text/plain"], ["applog_file_size", 69], ["applog_updated_at", 2017-04-02 15:13:27 UTC], ["applog_path", "log.txt"], ["created_at", 2017-04-02 15:13:27 UTC], ["updated_at", 2017-04-02 15:13:27 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:13:30 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/dc1d71bbb5c4d2a5e936db79ef10c19f20170402-2790-2u1fva.txt'
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "applog_file_name", "applog_content_type", "applog_file_size", "applog_updated_at", "applog_path", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xxxxxx"], ["applog_file_name", "log.txt"], ["applog_content_type", "text/plain"], ["applog_file_size", 69], ["applog_updated_at", 2017-04-02 15:13:30 UTC], ["applog_path", "log.txt"], ["created_at", 2017-04-02 15:13:30 UTC], ["updated_at", 2017-04-02 15:13:30 UTC]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:14:04 +0800
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:14:04 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/f32efed2cb512ad5b00cb5cda6a2587320170402-2905-18bkfy5.txt'
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/093d98c3720f9bd43c3dd5f91511fa0820170402-2905-1wfokyv.txt'
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:16:25 +0800
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/5330cbde6ddeb1ab0f8183fb2bc4f23f20170402-2905-1mc6nli.txt'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:17:45 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/b394168f221fad1529dcdc33a3098f4620170402-2905-nu8506.txt'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started POST "/api/v1/upload" for ::1 at 2017-04-02 23:20:06 +0800
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+Command :: file -b --mime '/var/folders/qk/t501kcg93cx0x_sxbj3mlcp80000gn/T/b394168f221fad1529dcdc33a3098f4620170402-2905-p39pma.txt'
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "applog_file_name", "applog_content_type", "applog_file_size", "applog_updated_at", "applog_path", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "xxxxxx"], ["applog_file_name", "0.123450.txt"], ["applog_content_type", "text/plain"], ["applog_file_size", 7692], ["applog_updated_at", 2017-04-02 15:20:06 UTC], ["applog_path", "0.123450.txt"], ["created_at", 2017-04-02 15:20:06 UTC], ["updated_at", 2017-04-02 15:20:06 UTC]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
